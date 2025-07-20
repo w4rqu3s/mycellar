@@ -33,7 +33,7 @@ export default function SignupForm () {
       <Title>Criar Conta</Title>
       <Form onSubmit={() => signup()}>
         <InputGroup>
-          <Label htmlFor="name">Nome Completo</Label>
+          <Label htmlFor="name">Username</Label>
           <Input
             type="text"
             id="name"
