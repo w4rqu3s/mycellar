@@ -13,26 +13,22 @@ import {
 
 export default function LoginForm () {
 
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
-    
 
-  const [formData, setFormData] = useState({
-    name: '',
-    password: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  function login() {
+    const user = {
+      name: name,
+      password: password
+    }
+    navigate('/drinklist', {state: {user: user}})
+  }
 
   return (
     <FormContainer>
       <Title>Login</Title>
-      <Form onSubmit={() => navigate('/drinklist', {state: {user: formData}})}>
+      <Form onSubmit={login}>
 
         <InputGroup>
           <Label htmlFor="name">Username</Label>
@@ -40,8 +36,8 @@ export default function LoginForm () {
             type="name"
             id="name"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.value)}
             placeholder="Insira seu username"
             required
           />
@@ -53,8 +49,8 @@ export default function LoginForm () {
             type="password"
             id="password"
             name="password"
-            value={formData.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => setPassword(e.value)}
             placeholder="Insira sua senha"
             required
           />

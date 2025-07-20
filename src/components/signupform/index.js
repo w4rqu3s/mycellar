@@ -13,36 +13,33 @@ import {
 } from './style'
 
 export default function SignupForm () {
-
+  
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
     
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  function signup() {
+    const user = {
+      name: name,
+      email: email,
+      password: password
+    }
+    navigate('/drinklist', {state: {user: user}})
+  }
 
   return (
     <FormContainer>
       <Title>Criar Conta</Title>
-      <Form onSubmit={() => navigate('/drinklist', {state: {user: formData}})}>
+      <Form onSubmit={signup}>
         <InputGroup>
           <Label htmlFor="name">Nome Completo</Label>
           <Input
             type="text"
             id="name"
             name="name"
-            value={formData.name}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => setName(e.value)}
             placeholder="Crie um username"
             required
           />
@@ -54,8 +51,8 @@ export default function SignupForm () {
             type="email"
             id="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.value)}
             placeholder="seu@email.com"
             required
           />
@@ -67,8 +64,8 @@ export default function SignupForm () {
             type="password"
             id="password"
             name="password"
-            value={formData.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => setPassword(e.value)}
             placeholder="Crie uma senha segura"
             required
           />
