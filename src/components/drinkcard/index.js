@@ -14,7 +14,7 @@ import {
     TypeBadge
 } from "./style";
 
-export default function DrinkCard(drink={}) {
+export default function DrinkCard(drink) {
 
     // Tipos de bebida predefinidos
     const drinkTypes = [
