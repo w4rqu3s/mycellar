@@ -1,5 +1,3 @@
-import React from "react";
-
 import { 
     Container,
     DrinkImage,
@@ -14,24 +12,7 @@ import {
     TypeBadge
 } from "./style";
 
-export default function DrinkCard(drink) {
-
-    // Tipos de bebida predefinidos
-    const drinkTypes = [
-        'Vinho Tinto',
-        'Vinho Branco',
-        'Vinho Rosé',
-        'Espumante',
-        'Champagne',
-        'Whisky',
-        'Vodka',
-        'Gin',
-        'Rum',
-        'Cachaça',
-        'Licor',
-        'Cerveja',
-        'Outro'
-    ];
+export default function DrinkCard({drink={}}) {
     
     const getDrinkIcon = (type) => {
         const icons = {
@@ -54,8 +35,8 @@ export default function DrinkCard(drink) {
 
     return (
         <Container>
-            <DrinkImage imageUrl={drink.imageUrl}>
-                    {!drink.imageUrl && getDrinkIcon(drink.type)}
+            <DrinkImage>
+                    {getDrinkIcon(drink.type)}
             </DrinkImage>
                 <DrinkInfo>
                     <DrinkName>{drink.name}</DrinkName>

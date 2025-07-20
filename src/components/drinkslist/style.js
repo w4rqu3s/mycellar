@@ -35,12 +35,6 @@ export const SearchInput = styled.input`
   border-radius: 8px;
   font-size: 0.875rem;
   min-width: 200px;
-
-  &:focus {
-    outline: none;
-    border-color: #7c3aed;
-    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.1);
-  }
 `
 
 export const FilterSelect = styled.select`
@@ -49,12 +43,6 @@ export const FilterSelect = styled.select`
   border-radius: 8px;
   font-size: 0.875rem;
   background: white;
-
-  &:focus {
-    outline: none;
-    border-color: #7c3aed;
-    box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.1);
-  }
 `
 
 export const AddButton = styled.button`
@@ -66,11 +54,6 @@ export const AddButton = styled.button`
   font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background: #6d28d9;
-  }
 `
 
 export const Grid = styled.div`

@@ -6,17 +6,12 @@ export const Container = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #e5e7eb;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  }
+  cursor: pointer;
 `
 
 export const DrinkImage = styled.div`
   height: 200px;
-  background: ${props => props.imageUrl ? `url(${props.imageUrl})` : 'linear-gradient(135deg, #7c3aed, #a855f7)'};
+  background: ${'linear-gradient(135deg, #7c3aed, #a855f7)'};
   background-size: cover;
   background-position: center;
   display: flex;
@@ -86,29 +81,4 @@ export const ActionButton = styled.button`
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s;
-
-  &:hover {
-    background: #f9fafb;
-    border-color: #9ca3af;
-  }
-
-  &.primary {
-    background: #7c3aed;
-    color: white;
-    border-color: #7c3aed;
-
-    &:hover {
-      background: #6d28d9;
-    }
-  }
-
-  &.danger {
-    color: #dc2626;
-    border-color: #fca5a5;
-
-    &:hover {
-      background: #fef2f2;
-      border-color: #f87171;
-    }
-  }
 `
