@@ -1,15 +1,15 @@
-import { useNavigate } from 'react-router';
-
 import NavigationBar from '../../components/navigationbar';
+import WannaBuyList from '../../components/wannabuylist';
+
+import { list } from '../../utils/data';
+
 
 export default function WannaBuy() {
-
-    const navigate = useNavigate();
 
     return (
         <>
           <NavigationBar  user='teste' />
-          <h1>FUTURAS ADIÇÕES</h1>
+          <WannaBuyList drinks={list} />
         </>
     )
 

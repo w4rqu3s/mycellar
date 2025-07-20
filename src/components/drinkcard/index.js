@@ -12,7 +12,7 @@ import {
     TypeBadge
 } from "./style";
 
-export default function DrinkCard({drink={}}) {
+export default function DrinkCard({drink={}}, moveToCellar=false) {
     
     const getDrinkIcon = (type) => {
         const icons = {
@@ -62,6 +62,11 @@ export default function DrinkCard({drink={}}) {
                     <ActionButton onClick={() => console.log('Não Implementado')}>
                         Editar
                     </ActionButton>
+                    { moveToCellar &&(
+                        <ActionButton>
+                            → Mover à Adega!
+                        </ActionButton>)
+                    }
                     <ActionButton 
                         className="danger" 
                         onClick={() => console.log('Não Implementado')}
