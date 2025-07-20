@@ -12,7 +12,7 @@ import {
     TypeBadge
 } from "./style";
 
-export default function DrinkCard({drink={}}, moveToCellar=false) {
+export default function DrinkCard({drink={}, moveToCellar=false}) {
     
     const getDrinkIcon = (type) => {
         const icons = {
