@@ -63,7 +63,7 @@ export default function LoginForm() {
             
             <SendBox>
                 <Submit value="Autenticar" onClick={() => Authenticate() }/>
-                <LinkForgot onClick={() => navigate('/reset')}> Criar Conta</LinkForgot>
+                <LinkForgot onClick={() => navigate('/signup')}> Criar Conta</LinkForgot>
             </SendBox>
             
         </Container>
