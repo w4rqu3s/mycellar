@@ -41,7 +41,7 @@ export function NavigationBar () {
           <NavTabs className="hidden md:flex">
             {sections.map(section => (
               <NavTab
-                onClick={() => navigate('/' + section.id)}
+                onClick={() => navigate('/' + section.id, {state: {user: user}})}
               >
                 <span style={{ marginRight: '0.5rem' }}>{section.icon}</span>
                 {section.label}

@@ -31,7 +31,7 @@ export default function SignupForm () {
   return (
     <FormContainer>
       <Title>Criar Conta</Title>
-      <Form onSubmit={signup}>
+      <Form onSubmit={() => signup()}>
         <InputGroup>
           <Label htmlFor="name">Nome Completo</Label>
           <Input

@@ -28,7 +28,7 @@ export default function LoginForm () {
   return (
     <FormContainer>
       <Title>Login</Title>
-      <Form onSubmit={login}>
+      <Form onSubmit={() => login()}>
 
         <InputGroup>
           <Label htmlFor="name">Username</Label>
