@@ -1,11 +1,16 @@
 import { useNavigate } from 'react-router';
 
+import NavigationBar from '../../components/navigationbar';
+
 export default function DrinkList() {
 
     const navigate = useNavigate();
 
     return (
-        <h1>LISTA DE BEBIDAS</h1>
+        <>
+          <NavigationBar  user='teste' />
+          <h1>LISTA DE BEBIDAS</h1>
+        </>
     )
 
 }
