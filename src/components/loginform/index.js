@@ -11,7 +11,7 @@ import {
     Button,
 } from '../signupform/style'
 
-export default function SignupForm () {
+export default function LoginForm () {
 
   const navigate = useNavigate();
     
