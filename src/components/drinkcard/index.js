@@ -1,4 +1,5 @@
 import React from "react";
+
 import { 
     Container,
     DrinkImage,
@@ -55,7 +56,7 @@ export default function DrinkCard(drink={}) {
         <Container>
             <DrinkImage imageUrl={drink.imageUrl}>
                     {!drink.imageUrl && getDrinkIcon(drink.type)}
-                </DrinkImage>
+            </DrinkImage>
                 <DrinkInfo>
                     <DrinkName>{drink.name}</DrinkName>
                     <DrinkDetails>

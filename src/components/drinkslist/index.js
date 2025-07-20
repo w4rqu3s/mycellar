@@ -29,17 +29,8 @@ export default function DrinksList ({drinks = []}) {
       {drinks.length === 0 ? (
         <EmptyState>
           <EmptyIcon>🍷</EmptyIcon>
-          {drinks.length === 0 ? (
-            <>
-              <EmptyText>Sua adega está vazia</EmptyText>
-              <EmptySubtext>Comece adicionando suas primeiras bebidas à coleção</EmptySubtext>
-            </>
-          ) : (
-            <>
-              <EmptyText>Nenhuma bebida encontrada</EmptyText>
-              <EmptySubtext>Tente ajustar os filtros de busca</EmptySubtext>
-            </>
-          )}
+          <EmptyText>Sua adega está vazia</EmptyText>
+          <EmptySubtext>Comece adicionando suas primeiras bebidas à coleção</EmptySubtext>
         </EmptyState>
       ) : (
         <Grid>
