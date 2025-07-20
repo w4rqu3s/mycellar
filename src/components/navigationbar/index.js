@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import {
     NavContainer,
@@ -13,12 +14,11 @@ import {
     LogoutButton,
 } from './style'
 
-export function NavigationBar ({ 
-  activeSection, 
-  user
-}) {
+export function NavigationBar () {
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const user = location.state?.user;
 
   const sections = [
     { id: 'drinklist', label: 'Minha Adega', icon: '🍷' },
@@ -41,7 +41,6 @@ export function NavigationBar ({
           <NavTabs className="hidden md:flex">
             {sections.map(section => (
               <NavTab
-                active={activeSection === section.id}
                 onClick={() => navigate('/' + section.id)}
               >
                 <span style={{ marginRight: '0.5rem' }}>{section.icon}</span>

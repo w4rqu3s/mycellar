@@ -11,7 +11,7 @@ export default function DrinkList() {
 
     return (
         <>
-          <NavigationBar  user='teste' />
+          <NavigationBar />
           <DrinksList drinks={drinks}/>
         </>
     )

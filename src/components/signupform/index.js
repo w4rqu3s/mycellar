@@ -34,7 +34,7 @@ export default function SignupForm () {
   return (
     <FormContainer>
       <Title>Criar Conta</Title>
-      <Form onSubmit={() => navigate('/drinklist')}>
+      <Form onSubmit={() => navigate('/drinklist', {state: {user: formData}})}>
         <InputGroup>
           <Label htmlFor="name">Nome Completo</Label>
           <Input
@@ -43,7 +43,7 @@ export default function SignupForm () {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Seu nome completo"
+            placeholder="Crie um username"
             required
           />
         </InputGroup>

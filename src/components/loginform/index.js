@@ -17,7 +17,7 @@ export default function LoginForm () {
     
 
   const [formData, setFormData] = useState({
-    email: '',
+    name: '',
     password: '',
   });
 
@@ -32,17 +32,17 @@ export default function LoginForm () {
   return (
     <FormContainer>
       <Title>Login</Title>
-      <Form onSubmit={() => navigate('/drinklist')}>
+      <Form onSubmit={() => navigate('/drinklist', {state: {user: formData}})}>
 
         <InputGroup>
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="name">Username</Label>
           <Input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
+            type="name"
+            id="name"
+            name="name"
+            value={formData.name}
             onChange={handleChange}
-            placeholder="seu@email.com"
+            placeholder="Insira seu username"
             required
           />
         </InputGroup>

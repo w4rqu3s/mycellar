@@ -8,7 +8,7 @@ export default function WannaBuy() {
 
     return (
         <>
-          <NavigationBar  user='teste' />
+          <NavigationBar />
           <WannaBuyList drinks={list} />
         </>
     )
