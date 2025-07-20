@@ -1,71 +1,71 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 
-import { 
-    Container, 
-    BoxIcon,
-    BoxItem,
-    Icon,
-    Title, 
-    SubTitle,
+import {
+    FormContainer,
+    Title,
+    Form,
     Label,
-    InputPassword,
-    InputEmail,
-    SendBox,
-    Submit,
-    LinkForgot,
-} from "./style"
+    InputGroup,
+    Input,
+    Button,
+} from '../signupform/style'
 
-// import logo_depen from '../../images/logo_depen.png';
+export default function SignupForm () {
 
-export default function LoginForm() {
+  const navigate = useNavigate();
     
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const navigate = useNavigate();
 
-    function Authenticate() {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
 
-        const user = {
-            name: 'User Name',
-            email: email 
-        }
-        navigate('/drinklist', { state: { user: user }})
-    }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
-    return (
-        <Container>
-            <BoxIcon>
-                <div></div>
-                <BoxItem>
-                    <Icon src={null}/>
-                </BoxItem>
-                <div></div>
-            </BoxIcon>
-            <Title>Login</Title>
-            {/* <SubTitle>Informe suas Credenciais</SubTitle> */}
+  return (
+    <FormContainer>
+      <Title>Login</Title>
+      <Form onSubmit={() => navigate('/drinklist')}>
 
-            <Label>E-mail</Label>
-            <InputEmail 
-                id="email" 
-                name="email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-        
-            <Label>Senha</Label>
-            <InputPassword 
-                id="password" 
-                name="password" 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            
-            <SendBox>
-                <Submit value="Autenticar" onClick={() => Authenticate() }/>
-                <LinkForgot onClick={() => navigate('/signup')}> Criar Conta</LinkForgot>
-            </SendBox>
-            
-        </Container>
-    )
-} 
+        <InputGroup>
+          <Label htmlFor="email">Email</Label>
+          <Input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="seu@email.com"
+            required
+          />
+        </InputGroup>
+
+        <InputGroup>
+          <Label htmlFor="password">Senha</Label>
+          <Input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="Insira sua senha"
+            required
+          />
+        </InputGroup>
+
+        <Button type="submit">
+            Entrar
+        </Button>
+      </Form>
+    </FormContainer>
+  );
+};
+
+
