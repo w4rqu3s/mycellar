@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 import {
     NavContainer,
@@ -18,17 +18,17 @@ export function NavigationBar () {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const user = location.state?.user;
+  const user = {
+    name: 'nousername',
+    email: 'user@gmail.com'
+  }
+  // const user = location.state?.user;
+  // console.log({user});
 
   const sections = [
     { id: 'drinklist', label: 'Minha Adega', icon: '🍷' },
     { id: 'wannabuy', label: 'Lista de Desejos', icon: '⭐' }
   ];
-
-  const getUserInitials = (name) => {
-    if (!name) return 'U';
-    return name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
-  };
 
   return (
       <NavContainer>
@@ -52,9 +52,9 @@ export function NavigationBar () {
           <UserSection>
                 <UserInfo>
                   <UserAvatar>
-                    {getUserInitials(user.name)}
+                    {user.name ? user.name[0].toUpperCase() : 'N'}
                   </UserAvatar>
-                  <span>Olá, {user.name?.split(' ')[0] || 'Usuário'}</span>
+                  <span>Olá, {user.name ? user.name : 'noname'}</span>
                 </UserInfo>
                 <LogoutButton onClick={() => navigate('/')}>
                   Sair
