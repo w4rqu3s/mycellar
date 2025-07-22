@@ -22,7 +22,7 @@ export default function LoginForm () {
       name: name,
       password: password
     }
-    navigate('/drinklist', {state: {user: user}})
+    navigate('/drinklist', {state: { userId: 0, name: user.name}})
   }
 
   return (

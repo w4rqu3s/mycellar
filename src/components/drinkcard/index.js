@@ -13,22 +13,23 @@ import {
 } from "./style";
 
 export default function DrinkCard({drink={}, moveToCellar=false}) {
+
+    const icons = {
+      'Vinho Tinto': '🍷',
+      'Vinho Branco': '🥂',
+      'Vinho Rosé': '🌹',
+      'Espumante': '🍾',
+      'Champagne': '🍾',
+      'Whisky': '🥃',
+      'Vodka': '🍸',
+      'Gin': '🍸',
+      'Rum': '🥃',
+      'Cachaça': '🥃',
+      'Licor': '🍯',
+      'Cerveja': '🍺'
+    };
     
-    const getDrinkIcon = (type) => {
-        const icons = {
-          'Vinho Tinto': '🍷',
-          'Vinho Branco': '🥂',
-          'Vinho Rosé': '🌹',
-          'Espumante': '🍾',
-          'Champagne': '🍾',
-          'Whisky': '🥃',
-          'Vodka': '🍸',
-          'Gin': '🍸',
-          'Rum': '🥃',
-          'Cachaça': '🥃',
-          'Licor': '🍯',
-          'Cerveja': '🍺'
-        };
+    function getDrinkIcon(type) {
         return icons[type] || '🍷';
     };
     

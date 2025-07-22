@@ -17,13 +17,15 @@ import {
 export function NavigationBar () {
 
   const navigate = useNavigate();
-  const location = useLocation();
+  const { location } = useLocation();
+  // const user = {
+  //   name: 'nousername',
+  //   email: 'user@gmail.com'
+  // }
   const user = {
-    name: 'nousername',
-    email: 'user@gmail.com'
+    name: location?.name
   }
-  // const user = location.state?.user;
-  // console.log({user});
+  console.log({user});
 
   const sections = [
     { id: 'drinklist', label: 'Minha Adega', icon: '🍷' },
@@ -31,6 +33,8 @@ export function NavigationBar () {
   ];
 
   return (
+    <>
+    {/* <h1>{location?.name}</h1> */}
       <NavContainer>
         <NavContent>
           <Logo>
@@ -62,6 +66,7 @@ export function NavigationBar () {
           </UserSection>
         </NavContent>
       </NavContainer>
+      </>
   );
 };
 
